@@ -1,5 +1,5 @@
 import './NavBar.css'
-import logo from '../Assets/Logo.jpg'
+import logo from '../../Assets/Logo.jpg'
 import LoginInfo from './NavBar/LoginInfo'
 
 

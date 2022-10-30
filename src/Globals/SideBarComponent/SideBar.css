@@ -1,0 +1,49 @@
+.SideBar{
+    position: sticky;
+    margin-top: 2em;
+    width: 15em;
+    height: 100%;
+    background-color: var(--Green);
+    box-shadow: 0.1em .15em rgba(0, 0, 0, 0.5);
+    border-radius: 1em;
+    z-index: 0;
+}
+
+.SideBar-list{
+    padding: 10%;
+    padding-left: 15%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.SideBar-BTN{
+    transition-duration: 200ms;
+    font-family: 'LEMONMILK';
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width: 90%;
+    border: none;
+    border-radius: 1em;
+    background-color: var(--Green);
+    color: var(--Orange);
+    cursor: pointer;
+}
+
+.SideBar-BTN:hover{
+    background-color: var(--Orange);
+    color: var(--Dark-Green);
+}
+
+
+
+
+
+@media screen and (max-width: 375px) {
+    .SideBar{
+        width: 100%;
+    }
+    
+}
+
