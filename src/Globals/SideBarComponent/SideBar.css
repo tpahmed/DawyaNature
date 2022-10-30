@@ -44,6 +44,10 @@
     .SideBar{
         width: 100%;
     }
-    
+    .SideBar-list{
+        padding: 1%;
+        padding-left: 15%;
+        
+    }
 }
 
