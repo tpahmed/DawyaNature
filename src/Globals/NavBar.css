@@ -1,0 +1,21 @@
+.NavBar{
+    position: sticky;
+    top: 1%;
+    background-color: var(--Green);
+    padding: .1em;
+    border-radius: 1em;
+    box-shadow: 0.1em .15em rgba(0, 0, 0, 0.5);
+}
+
+#NavList{
+    padding: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+#Logo{
+    cursor: pointer;
+}
