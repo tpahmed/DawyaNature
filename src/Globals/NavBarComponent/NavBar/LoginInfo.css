@@ -15,6 +15,7 @@
 .LoginInfoanimation_in{
     animation: Div_Animation_in 1s ease-in-out forwards;
 }
+
 .LoginInfoanimation_in:after {
     content: "";
     position: absolute;
@@ -28,7 +29,7 @@
     transform-origin: center top;
     border-radius: 1em;
     z-index: -1;
-  }
+}
 
 .LoginInfoanimation_out{
     animation: Div_Animation_out 1s ease-in-out forwards;
@@ -79,12 +80,14 @@
     color: var(--Dark-Green);
     cursor: pointer;
 }
+
 .Linfo-btn:hover{
     border: 2px solid var(--Green);
     background-color: var(--Green);
     color: var(--Dark-Orange);
     cursor: pointer;
 }
+
 @keyframes PFP_animation_in {
     0%{
         opacity: 100%;

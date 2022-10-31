@@ -2,21 +2,9 @@ import pfp from '../../../Assets/DefaultPFP.jpg'
 import './LoginInfo.css'
 
 //Setup
-window.addEventListener("load",()=>{
+document.addEventListener("load",()=>{
     
-    const LInfo = document.getElementsByClassName("LoginInfo")[0];
     
-    window.addEventListener("click",onMouseOutAnimation);
-    
-    LInfo.addEventListener("click",(e)=>{
-        onclickAnimation();
-        e.stopPropagation();
-    });
-    const ProfileBtn = document.getElementById('profile-Linfo-btn');
-    const SignoutBtn = document.getElementById('signout-Linfo-btn');
-    
-    ProfileBtn.onclick = ProfileBtnFunc;
-    SignoutBtn.onclick = SignoutBtnFunc;
     
 }); 
 
@@ -65,6 +53,19 @@ function SignoutBtnFunc(){
 
 
 export default function LoginInfo(props){
+    const LInfo = document.getElementsByClassName("LoginInfo")[0];
+    
+    window.addEventListener("click",onMouseOutAnimation);
+    
+    LInfo.addEventListener("click",(e)=>{
+        onclickAnimation();
+        e.stopPropagation();
+    });
+    const ProfileBtn = document.getElementById('profile-Linfo-btn');
+    const SignoutBtn = document.getElementById('signout-Linfo-btn');
+    
+    ProfileBtn.onclick = ProfileBtnFunc;
+    SignoutBtn.onclick = SignoutBtnFunc;
     return (
         <>
             <div className="LoginInfo">
