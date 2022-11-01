@@ -2,12 +2,21 @@ import pfp from '../../../Assets/DefaultPFP.jpg'
 import './LoginInfo.css'
 
 //Setup
-document.addEventListener("load",()=>{
+function Setup(){
+    const LInfo = document.getElementsByClassName("LoginInfo")[0];
     
+    window.addEventListener("click",onMouseOutAnimation);
     
+    LInfo.addEventListener("click",(e)=>{
+        onclickAnimation();
+        e.stopPropagation();
+    });
+    const ProfileBtn = document.getElementById('profile-Linfo-btn');
+    const SignoutBtn = document.getElementById('signout-Linfo-btn');
     
-}); 
-
+    ProfileBtn.onclick = ProfileBtnFunc;
+    SignoutBtn.onclick = SignoutBtnFunc;
+}
 
 //Animation
 function onclickAnimation(){
@@ -24,9 +33,7 @@ function onclickAnimation(){
         LInfo.classList.add("LoginInfoanimation_in");
         PFP.classList.add("PFPanimation_in");
     }
-    LInfo.addEventListener("animationend",()=>{
-        LInfo_List.classList.replace("Linfo-list-hide","Linfo-list-unhide");
-    },{once:true});
+    LInfo_List.classList.replace("Linfo-list-hide","Linfo-list-unhide");
     
 }
 
@@ -53,22 +60,10 @@ function SignoutBtnFunc(){
 
 
 export default function LoginInfo(props){
-    const LInfo = document.getElementsByClassName("LoginInfo")[0];
     
-    window.addEventListener("click",onMouseOutAnimation);
-    
-    LInfo.addEventListener("click",(e)=>{
-        onclickAnimation();
-        e.stopPropagation();
-    });
-    const ProfileBtn = document.getElementById('profile-Linfo-btn');
-    const SignoutBtn = document.getElementById('signout-Linfo-btn');
-    
-    ProfileBtn.onclick = ProfileBtnFunc;
-    SignoutBtn.onclick = SignoutBtnFunc;
     return (
         <>
-            <div className="LoginInfo">
+            <div className="LoginInfo" onLoad={()=>Setup()}>
                 <img id='PFP' src={pfp} alt="ProfilePic"/>
                 <ul id='Linfo-list' className='Linfo-list-hide'>
                     <li>

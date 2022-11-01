@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./SideBar.css"
 
 //Setup
@@ -31,10 +32,10 @@ export default function Side(){
     return(
         <div className="SideBar">
             <ul className="SideBar-list">
-                <li><input className="SideBar-BTN" id="btn-1" type={"button"} value={"Page D'accueil"} /></li>
-                <li><input className="SideBar-BTN" id="btn-2" type={"button"} value={"Modifier les pages"} /></li>
-                <li><input className="SideBar-BTN" id="btn-3" type={"button"} value={"boîte de réception"} /></li>
-                <li><input className="SideBar-BTN" id="btn-4" type={"button"} value={"Graphiques"} /></li>
+                <li><Link to="/home"><input className="SideBar-BTN" id="btn-1" type={"button"} value={"Page D'accueil"} /></Link></li>
+                <li><Link to="/edit"><input className="SideBar-BTN" id="btn-2" type={"button"} value={"Modifier les pages"} /></Link></li>
+                <li><Link to="/inbox"><input className="SideBar-BTN" id="btn-3" type={"button"} value={"boîte de réception"} /></Link></li>
+                <li><Link to="/charts"><input className="SideBar-BTN" id="btn-4" type={"button"} value={"Graphiques"} /></Link></li>
             </ul>
 
         </div>

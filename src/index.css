@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('./Fonts/Century\ Gothic.ttf');
+    font-size: small;
+}
+@font-face {
+    font-family: 'LEMONMILK';
+    src: url('./Fonts/LEMONMILK.otf');
+    font-size: small;
+}
+
+:root{
+    --Green : #92C83E;
+    --Dark-Green : #72A81E;
+    --Light-Green : #B2E85E;
+    --Orange : #F2721F;
+    --Dark-Orange : #D25200;
+    --Light-Orange : #FF923F;
+}
+
+*{
+    font-family: 'Century Gothic';
+}
+
+body{
+    background-color: var(--Orange);
+    padding-left: .1em;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--Orange);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--Green);
+    border-radius: 1em;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--Dark-Green);
+}

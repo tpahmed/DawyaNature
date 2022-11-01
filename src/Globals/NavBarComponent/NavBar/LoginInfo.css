@@ -59,14 +59,10 @@
 }
 
 .Linfo-list-unhide{
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0s linear 0s, opacity 150ms;
+    animation: BTNS_animation_in 1s ease-in-out forwards;
 }
 .Linfo-list-hide{
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s linear 300ms, opacity 150ms;
+    animation: BTNS_animation_out 1s ease-in-out forwards;
 }
 
 .Linfo-btn{
@@ -75,9 +71,9 @@
     width: 9.5em;
     height: 2em;
     border-radius: 5em;
-    border: 2px solid var(--Dark-Green);
+    border: 2px solid var(--Green);
     background-color: var(--Orange);
-    color: var(--Dark-Green);
+    color: var(--Green);
     cursor: pointer;
 }
 
@@ -87,6 +83,31 @@
     color: var(--Dark-Orange);
     cursor: pointer;
 }
+
+@keyframes BTNS_animation_in {
+    0%{
+        opacity: 0%;
+    }
+    50%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes BTNS_animation_out {
+    100%{
+        opacity: 0%;
+    }
+    50%{
+        opacity: 0%;
+    }
+    0%{
+        opacity: 100%;
+    }
+}
+
 
 @keyframes PFP_animation_in {
     0%{
