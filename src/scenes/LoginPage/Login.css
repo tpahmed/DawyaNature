@@ -23,7 +23,6 @@
     margin-top: 1.3em;
     margin-left: 10%;
     border: none;
-    outline: var(--Light-Orange) solid;
     background-color: var(--Light-Green);
     border-radius: .5em;
     opacity: 75%;
@@ -45,6 +44,29 @@
     color: transparent;
 }
 
+#Login-btn{
+    display: block;
+    width: 40%;
+    margin-top: 1.3em;
+    margin-left: 30%;
+    border: none;
+    outline: var(--Light-Green) solid;
+    background-color: var(--Light-Green);
+    border-radius: .5em;
+    opacity: 75%;
+    color: var(--Green);
+    font-size: 24px;
+    padding-left: 2%;
+    cursor: pointer;
+}
+#Login-btn:hover{
+    transition-duration: 150ms;
+    outline: var(--Dark-Green) solid;
+    color: var(--Dark-Green);
+}
+#Login-btn:focus{
+    outline: var(--Dark-Orange) solid;
+}
 
 @media screen and (max-width: 475px) {
     .Login-container{
