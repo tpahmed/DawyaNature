@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('/Fonts/Century\ Gothic.ttf');
+    font-size: small;
+}
+
+:root{
+    --Green : #7BB662;
+    --Orange : #FFAE42;
+    --black : black;
+    --white : white;
+}
+
+body{
+    font-family: 'Century Gothic';
+    background-color: var(--Orange);
+}
+/* header */
+h1 img{
+    width: 170px;
+    height: 60px;
+    margin-left: 0.3em;
+}
+li{
+    font-size: 1.5rem;
+}
+a{
+    color: var(--black);
+    text-decoration: none;
+}
+.head{
+    background: var(--Green);
+    border-radius: 30px 30px 0 0 ;
+}
+nav{
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    padding: 1px;
+    z-index: 10;
+}
+nav ul{
+    display: flex;
+    flex: 1 1 40rem;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+#logo{
+    flex: 1 1 40rem;
+}
+/* scroll */
+::-webkit-scrollbar{
+    background-color: var(--Orange);
+    width: 13px;
+    padding: 1em;
+}
+
+::-webkit-scrollbar-track-piece{
+    margin: 1em;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--Green);
+    border-radius: 1em;
+    border: 1px solid var(--Orange);
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--Dark-Green);
+}
+h3{
+    border: var(--Green) solid 2px;
+    background: var(--Green);
+    color: var(--white);
+}
+.one{
+    display: flex;
+}
+.two{
+    display: flex;
+}
+.tree{
+    display: flex;
+}
+.four{
+    display: flex;
+}
+.five{
+    display: flex;
+}
