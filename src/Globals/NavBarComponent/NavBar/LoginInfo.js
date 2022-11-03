@@ -44,6 +44,8 @@ function onMouseOutAnimation(){
     LInfo_List.classList.replace("Linfo-list-unhide","Linfo-list-hide");
     LInfo.classList.replace("LoginInfoanimation_in","LoginInfoanimation_out");
     PFP.classList.replace("PFPanimation_in","PFPanimation_out");
+    setTimeout(()=> PFP.classList.remove("PFPanimation_out"),1000);
+    setTimeout(()=> LInfo.classList.remove("LoginInfoanimation_out"),1000);
 }
 
 
@@ -55,7 +57,7 @@ function ProfileBtnFunc(){
 
 function SignoutBtnFunc(){
     console.log("SignOut");
-    
+    window.location = '/login';
 }
 
 

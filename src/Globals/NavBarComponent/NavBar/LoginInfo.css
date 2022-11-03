@@ -20,7 +20,6 @@
     content: "";
     position: absolute;
     top: 44%;
-
     height: 58%;
     left: -2%;
     width: 104%;
@@ -155,7 +154,6 @@
         width: 7em;
         height: 6em;
         border-radius: 1em;
-        /* box-shadow: 0.1em 0.15em rgba(0, 0, 0, 0.5); */
     }
 }
 
@@ -165,7 +163,6 @@
         width: 7em;
         height: 6em;
         border-radius: 1em;
-        box-shadow: 0em 0.15em rgba(0, 0, 0, .5);
     }
     50%{
         width: 7em;

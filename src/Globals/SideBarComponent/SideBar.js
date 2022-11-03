@@ -1,5 +1,11 @@
+import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import Typography from '@mui/material/Typography';
+import EditIcon from '@mui/icons-material/Edit';
+import HomeIcon from '@mui/icons-material/Home';
+import MailIcon from '@mui/icons-material/Mail';
+import Stack from '@mui/material/Stack';
 import { Link } from "react-router-dom";
-import "./SideBar.css"
+import "./SideBar.css";
 
 //Setup
 function Setup(){
@@ -32,10 +38,10 @@ export default function Side(){
     return(
         <div className="SideBar" onLoad={()=>Setup()}>
             <ul className="SideBar-list">
-                <li><Link to="home"><input className="SideBar-BTN" id="btn-1" type={"button"} value={"Page D'accueil"} /></Link></li>
-                <li><Link to="edit"><input className="SideBar-BTN" id="btn-2" type={"button"} value={"Modifier les pages"} /></Link></li>
-                <li><Link to="inbox"><input className="SideBar-BTN" id="btn-3" type={"button"} value={"boîte de réception"} /></Link></li>
-                <li><Link to="charts"><input className="SideBar-BTN" id="btn-4" type={"button"} value={"Graphiques"} /></Link></li>
+                <li><Link to="home"><button className="SideBar-BTN" id="btn-1" type={"button"}><Stack direction="row" alignItems="center" gap={1}><HomeIcon/><Typography> Page D'accueil</Typography></Stack></button></Link></li>
+                <li><Link to="edit"><button className="SideBar-BTN" id="btn-2" type={"button"}><Stack direction="row" alignItems="center" gap={1}><EditIcon/><Typography> Modifier les pages</Typography></Stack></button></Link></li>
+                <li><Link to="inbox"><button className="SideBar-BTN" id="btn-3" type={"button"}><Stack direction="row" alignItems="center" gap={1}><MailIcon/><Typography> boîte de réception</Typography></Stack></button></Link></li>
+                <li><Link to="charts"><button className="SideBar-BTN" id="btn-4" type={"button"}><Stack direction="row" alignItems="center" gap={1}><QueryStatsIcon/><Typography> statistiques</Typography></Stack></button></Link></li>
             </ul>
 
         </div>

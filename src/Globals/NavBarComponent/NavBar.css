@@ -1,6 +1,6 @@
 .NavBar{
     position: sticky;
-    top: 1%;
+    top: 2%;
     background-color: var(--Green);
     padding: .1em;
     border-radius: 1em;

@@ -1,0 +1,14 @@
+.Inbox{
+    padding: 1.5em;
+    top: 100em;
+    height: 40em;
+}
+
+.InboxTableHeader{
+    background-color: var(--Orange);
+    width: 110%;
+}
+
+.InboxTablecell{
+    background-color: var(--Light-Orange);
+}
