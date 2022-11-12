@@ -1,18 +1,23 @@
-import './Login.css';
+import { SendLoginReq } from '../../server_control/connection';
 import Logo from '../../Assets/Logo.jpg';
+import { checkLogin } from '../../server_control/connection';
+import './Login.css';
 
-function GoLogin(){
-    console.log('Login');
-    window.location = '/dashboard';
-}
 
-function EnterEvent(e){
-    if (e.key === "Enter"){
-        GoLogin();
-    }
-}
+
 
 export default function Login(){
+    checkLogin();
+    async function GoLogin(){
+        let user = document.getElementById('username').value;
+        let pass = document.getElementById('password').value;
+        await SendLoginReq(user,pass);
+    }
+    function EnterEvent(e){
+        if (e.key === "Enter"){
+            GoLogin();
+        }
+    }
     return (
         <div className="Login-container">
             <img id='Logo-Login' src={Logo} alt='Logo'/>

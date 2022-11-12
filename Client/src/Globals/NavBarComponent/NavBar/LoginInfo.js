@@ -1,4 +1,5 @@
 import pfp from '../../../Assets/DefaultPFP.jpg'
+import { LogOut } from '../../../server_control/connection';
 import './LoginInfo.css'
 
 //Setup
@@ -15,7 +16,7 @@ function Setup(){
     const SignoutBtn = document.getElementById('signout-Linfo-btn');
     
     ProfileBtn.onclick = ProfileBtnFunc;
-    SignoutBtn.onclick = SignoutBtnFunc;
+    SignoutBtn.onclick = LogOut;
 }
 
 //Animation
@@ -53,11 +54,6 @@ function onMouseOutAnimation(){
 
 function ProfileBtnFunc(){
     console.log("Profile");
-}
-
-function SignoutBtnFunc(){
-    console.log("SignOut");
-    window.location = '/login';
 }
 
 

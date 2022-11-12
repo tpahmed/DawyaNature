@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tpahmed/DawyaNature#readme",
   "dependencies": {
+    "aes-encryption": "^1.0.4",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
