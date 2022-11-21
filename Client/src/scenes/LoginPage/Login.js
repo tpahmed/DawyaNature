@@ -7,7 +7,7 @@ import './Login.css';
 
 
 export default function Login(){
-    checkLogin();
+    checkLogin(true);
     async function GoLogin(){
         let user = document.getElementById('username').value;
         let pass = document.getElementById('password').value;

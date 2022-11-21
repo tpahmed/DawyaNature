@@ -1,27 +1,8 @@
-
-.Login-container{
-    position: absolute;
-    top: 16%;
-    left: 35%;
-    width: 30%;
-    height: 20em;
-    background-color: var(--Green);
-    border-radius: 2em;
-    box-shadow: 0.1em .15em rgba(0, 0, 0, 0.5);
-}
-
-#Logo-Login{
-    margin-top: 4%;
-    margin-left: 35%;
-    width: 30%;
-    
-}
-
-.InputBar{
+.InputBar-A{
     display: block;
-    width: 80%;
+    width: 50%;
     margin-top: 1.3em;
-    margin-left: 10%;
+    margin-left: 25%;
     border: none;
     background-color: var(--Light-Green);
     border-radius: .5em;
@@ -30,25 +11,30 @@
     font-size: 24px;
     padding-left: 2%;
 }
-.InputBar:hover{
+.InputBar-A:hover{
     transition-duration: 150ms;
     outline: var(--Dark-Orange) solid;
 }
-.InputBar::placeholder{
+.InputBar-A::placeholder{
     color: var(--Orange);
 }
-.InputBar:focus{
+.InputBar-A:focus{
     outline: var(--Dark-Orange) solid;
 }
-.InputBar:focus::placeholder{
+.InputBar-A:focus::placeholder{
     color: transparent;
 }
+#image{
+    width: 30%;
+    margin-left: 35%;
+}
+
 
 #create-btn{
     display: block;
-    width: 70%;
+    width: 30%;
     margin-top: 1.3em;
-    margin-left: 15%;
+    margin-left: 35%;
     border: none;
     outline: var(--Light-Green) solid;
     background-color: var(--Light-Green);
@@ -68,24 +54,27 @@
     outline: var(--Dark-Orange) solid;
 }
 
-@media screen and (max-width: 575px) {
-    .Login-container{
-        top: 20%;
-        left: 15%;
-        width: 70%;
-    }
-    #Logo-Login{
-        margin-top: 10%;
-        margin-left: 30%;
-        width: 40%;
-    }
-    .InputBar{
-        margin-left: 4%;
-        width: 90%;
-    }
-    #Login-btn{
-        width: 65%;
-        margin-left: 17.5%;
-        font-size: 20px;
-    }
+.image-input{
+    border-color: var(--Orange);
+    width: 30%;
+    margin-left: 35%;
+}
+
+#lbl-image{
+    border: 2px solid var(--Light-Green);
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em;
+    background-color: var(--Light-Green);
+    transition: .5s;
+    color: var(--Dark-Orange);
+}
+
+#lbl-image:hover {
+    background-color: var(--Dark-Orange);
+    border: 2px solid var(--Dark-Orange);
+    color: var(--Green);
+}
+#a-legend{
+    font-family: "LEMONMILK";
+    color: var(--Orange);
 }

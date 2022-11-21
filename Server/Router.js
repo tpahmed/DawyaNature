@@ -4,6 +4,10 @@ const AesEncryption = require('aes-encryption');
 const express = require('express');
 const bodyparser = require('body-parser');
 const cors = require("cors");
+const moment = require('moment');
+
+
+
 const aes = new AesEncryption();
 
 //definition de cle de securiter (64char)
@@ -72,7 +76,6 @@ app.post('/api/checktoken',(req,res)=>{
     } 
     else if ((d.getTime() - Token_content[2])>(d.getTime() - (24*60*60*1000))){
         data.data_status = 'fail';
-        console.log((d.getTime() - Token_content[2])>(d.getTime() - (24*60*60*1000)));
         res.status(200).send(data);
         return
     }
@@ -96,6 +99,20 @@ app.post('/api/checktoken',(req,res)=>{
         response.start()
     }
 })
+
+// Recupere la list des client minimalise
+app.get('/api/getclients',(req,res)=>{
+    let query = "SELECT id,nom,prenom,ville,Nombrepersonne,DateDebut FROM client";
+    let response = connection.query(query,[],(error,result)=>{
+        let RDPacket = ToJSON(result);
+        for (let i in RDPacket){
+            let d = moment.utc(RDPacket[i].DateDebut).format('DD/MM/YYYY');
+            RDPacket[i].DateDebut = d;
+        }
+        res.status(200).send(RDPacket);
+    });
+    response.start()
+});
 
 //lancer le routeur
 app.listen(port,()=>{

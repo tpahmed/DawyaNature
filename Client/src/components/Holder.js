@@ -1,8 +1,11 @@
-import { checkLogin } from '../server_control/connection';
+import { checkLoginHolder } from '../server_control/connection';
 import './Holder.css'
 
 export default function Holder(props){
-    checkLogin();
+    checkLoginHolder(true);
+    
+    
+       
     return (
         <div className="Holder">
             <h1 className='Title'>

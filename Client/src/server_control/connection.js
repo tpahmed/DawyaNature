@@ -6,7 +6,6 @@ const SERVER_URL = 'http://127.0.0.1:3001/api'
 export function SendLoginReq(user,pass){
     axios.post(SERVER_URL+'/login',{user,pass},{credentials: 'include'}).then((result)=>{
         if (result.data.data_status === 'success'){
-            console.log(result.data);
             setCookie('Token',result.data.content,1);
             window.location = '/dashboard/home';
         }
@@ -20,22 +19,34 @@ export function SendLoginReq(user,pass){
     
 }
 
-export function checkLogin(){
+export function checkLoginHolder(redirect=false){
     let ctoken = getCookie('Token');
     axios.post(SERVER_URL+'/checktoken',{ctoken},{credentials: 'include'}).then((result)=>{
-        console.log(result.data.data_status);
-        if (result.data.data_status !== 'success'){
+        if (result.data.data_status !== 'success' && redirect){
             setCookie('Token','bye',0);
-            window.location = '/login';   
-        }
-        else{
-            window.location = '/dashboard';   
+            window.location = '/login'
         }
     }).catch((err)=>{
         //to mute verbose
     }).finally(()=>{
         //to mute verbose
     });
+}
+export function checkLogin(redirect=false){
+    let ctoken = getCookie('Token');
+    axios.post(SERVER_URL+'/checktoken',{ctoken},{credentials: 'include'}).then((result)=>{
+        if (result.data.data_status === 'success' && redirect){
+            window.location = '/dashboard'                   
+        }
+    }).catch((err)=>{
+        //to mute verbose
+    }).finally(()=>{
+        //to mute verbose
+    });
+}
+export async function get_clients_min(){
+    checkLogin();
+    return axios.get(SERVER_URL+'/getclients')
 }
 
 function setCookie(cname, cvalue, day) {
