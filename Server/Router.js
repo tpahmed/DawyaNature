@@ -114,6 +114,22 @@ app.get('/api/getclients',(req,res)=>{
     response.start()
 });
 
+app.get('/api/client',(req,res)=>{
+    let id = req.query.id;
+    let query = "SELECT * FROM client where id=?";
+    let response = connection.query(query,[id],(error,result)=>{
+        let RDPacket = ToJSON(result);
+        for (let i in RDPacket){
+            let d = moment.utc(RDPacket[i].DateDebut).format('DD/MM/YYYY');
+            RDPacket[i].DateDebut = d;
+            d = moment.utc(RDPacket[i].Datefine).format('DD/MM/YYYY');
+            RDPacket[i].Datefine = d;
+        }
+        res.status(200).send(RDPacket);
+    });
+    response.start()
+});
+
 //lancer le routeur
 app.listen(port,()=>{
     console.log('listening on port : ',port);

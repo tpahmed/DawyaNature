@@ -45,8 +45,11 @@ export function checkLogin(redirect=false){
     });
 }
 export async function get_clients_min(){
-    checkLogin();
     return axios.get(SERVER_URL+'/getclients')
+}
+
+export async function get_client(id){
+    return axios.get(SERVER_URL+`/client?id=${id}`);
 }
 
 function setCookie(cname, cvalue, day) {

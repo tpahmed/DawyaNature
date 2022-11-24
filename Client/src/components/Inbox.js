@@ -24,7 +24,7 @@ export default function Inbox(){
     let [ROW,setROW] = useState([]);
 
     useEffect(()=>{
-        get_clients_min(setROW).then((r)=>{
+        get_clients_min().then((r)=>{
             let data = r.data.reverse();
             setROW(data);
         });
@@ -43,7 +43,7 @@ export default function Inbox(){
                       color: COLORS.Dark_Orange,
                     }
                 }}
-                onRowClick={(a)=>{console.log(a.row.id)}}
+                onRowClick={(a)=>{window.location = `/dashboard/client?id=${a.row.id}`}}
                 columns={COLUMNS}
                 rows = {ROW}
             />
