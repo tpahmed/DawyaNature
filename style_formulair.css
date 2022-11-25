@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('/Fonts/Century\ Gothic.ttf');
+    font-size: small;
+}
+
+:root{
+    --Green : #7BB662;
+    --Orange : #FFAE42;
+    --black : black;
+    --white : white;
+    --dark-green :#5b9642;
+}
+
+body{
+    font-family: 'Century Gothic';
+    background-color: var(--Orange);
+}
+
+
+/* header */
+h1 img{
+    width: 170px;
+    height: 60px;
+    margin-left: 0.3em;
+}
+li{
+    font-size: 1.5rem;
+}
+a{
+    color:  var(--black);
+    text-decoration: none;
+}
+.head{
+    background: var(--Green);
+    border-radius: 30px 30px 0 0 ;
+}
+nav{
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    padding: 1px;
+    z-index: 10;
+}
+nav ul{
+    display: flex;
+    flex: 1 1 40rem;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+#logo{
+    flex: 1 1 40rem;
+}
+
+
+#background-video{
+    width: 100%;
+    object-fit: cover;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: blur(0.3em);
+    border-radius: 0 0 30px 30px;
+    
+}
+
+.map{
+    position:relative;
+}
+
+.image-map{
+    position: absolute;
+    top: 20%;
+    left: 33%;
+    z-index: 3;
+    width: 30em;
+}
+
+
+
+
+
+
+/* Tableu */
+table{
+    margin-left: 250px;
+    margin-top: 100px;
+    text-align: left;
+    
+}
+
+
+.textarea{
+    top: 0%;
+    left: 0%;
+    padding: 0%;
+    
+}
+
+/* footer */
+footer{
+    background: var(--Green);
+    height: auto;
+    width: 98vw;
+    font-family: "Open Sans";
+    padding-top: 0em;
+    color: var(--black);
+    margin-top: 2rem;
+    border-radius: 0 0 30px 30px;
+    
+}
+.foot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.foot h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.foot p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    list-style: none;
+}
+.socials li{
+    font-size: medium;
+}
+.foot-bottom{
+    background-color: var(--black);
+    width: 98vw;
+    padding: 5px 0;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+}
+.foot-bottom{
+    color: var(--Green);
+}
+.foot-h3{
+    font-size: small;
+}
+
+
+
