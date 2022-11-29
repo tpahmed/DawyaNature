@@ -27,6 +27,10 @@ body{
     background-color: var(--Light-Orange);
     margin: 0;
     overflow-x: hidden;
+    background-image: url('../Media/blobsnoBG.png');
+    background-position-y: -60px, 400px;
+    background-repeat: 20px 50px;
+    background-size: 40%;
 }
 
 ::-webkit-scrollbar{
@@ -49,13 +53,42 @@ body{
     background-color: var(--Light-Orange);
 }
 
+.map svg{
+    position: absolute;
+    /* margin-top: 100px;/ */
+    top: 0;
+    z-index: 100;
+    width: 800px;
+    height: 800px;
+    scale: 50%;
+
+}
+path {
+    stroke: var(--Dark-Green);
+    stroke-width: 3;
+    stroke-dasharray: 1600;
+    stroke-dashoffset: 0;
+    
+    animation: dash 7s ease-in-out alternate ;
+    fill: none;
+}
+@keyframes dash {
+    0% {
+        /* fill:aqua; */
+        stroke-dashoffset: 1600;
+    } 
+    100% {
+        stroke-dashoffset: -0;
+    }
+}
 
 .Nav{
     position: fixed;
     width: 99vw;
     height: 3.5em;
-    border-radius: 3em;
-    background-color: var(--Light-Orange);
+    border-radius: 0em 0em 2em 2em;
+    background-color: var(--Green);
+    box-shadow: .07em .1em #000000AA;
     top: 0;
     padding: .2em;
     opacity: 0;
@@ -64,6 +97,7 @@ body{
 }
 
 #Logo{
+    max-width: 10em;
     margin-top: .2em;
     margin-left: 1em;
     cursor: pointer;
@@ -71,35 +105,258 @@ body{
     
 }
 
+.menu-list {
+    max-width: 300px;
+    margin: auto;
+    height: 500px;
+    border-radius: 10px;
+    left: 0;
+}
+#optstd{
+    padding-left: 30em;
+}
+.tglmenu {
+    background-color: var(--Green);
+    position: relative;
+    margin-top: .5em;
+    height: 2em;
+    
+}
+
+.tglmenu a {
+    text-decoration: none;
+    color: var(--Orange);
+    padding: .5em;
+    font-size: 16px;
+    border-radius: 1em;
+    margin-left: 1em;
+}
+
+.tglmenu a.icon {
+    /* display: none; */
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.tglmenu a:hover {
+    border-radius: 10em;
+    background-color: var(--Orange);
+    color: var(--Green);
+} 
+
 .landing{
     position: relative;
-    height: 100vh;
+    /* height: 100vh; */
+    top: 0;
+    height: 10px;
     padding: 0;
     margin: 0;
 }
-/* main{
-    background-color: var(--Green);
-    width: 90%;
-    position: relative;
-    top: 5%;
-    left: 5%;
-    margin-top: 2.9em;
-    padding: .2em;
-    padding-top: 0;
-    z-index: 0;
+main{
+    margin-top:100vh;
 }
-*/
+#pImage{
+    margin: 1em;
+    max-width: 20em;
+    width: 300em;
+    
+}
 .main_Vid{
     /* opacity: 60%; */
-    position: fixed;
+    /* position: fixed; */
+    position: absolute;
     width: 100%;
+    max-width: 100%;
+    margin: 0;
     top: 0;
+    border-radius: 0em 0em 2em 2em;
+    box-shadow: .07em .1em #000000AA;
 } 
-@media (min-aspect-ration: 16/9) {
-    .main_Vid{
-        width: 100%;
-        height: auto;
+#parag{
+    /* margin-top: 10%; */
+    background-color: var(--Light-Green);
+    border-radius: 2em;
+    padding: 1em;
+    color: var(--Dark-Orange);
+    margin: 2em;
+    top: 200vh;
+    font-size: large;
+}
+#paragblob{
+    /* margin-top: 10%; */
+    background-color: var(--Light-Green);
+    border-radius: 2em;
+    padding: 1em;
+    color: var(--Dark-Orange);
+    margin: 2em;
+    top: 200vh;
+    font-size: large;
+}
+
+#titreparag{
+    font-family: 'LEMONMILK';
+    color: var(--Orange);
+    text-align: center;
+}
+.mute{
+    background-color: var(--Green);
+    position: fixed;
+    z-index: 10;
+    bottom: 5%;
+    left: 2%;
+    width: 5em;
+    height: 5em;
+    border-radius: 5em;
+    border: 2px solid var(--Dark-Orange);
+    opacity: 50%;
+}
+.mute:hover{
+    opacity: 1;
+}
+#muteimg{
+    width: 90%;
+    color: var(--Dark-Orange);
+    filter: opacity(.3) drop-shadow(0 0 0 var(--Dark-Orange));
+}
+#langs{
+    list-style: none;
+    color: var(--Light-Orange);
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-evenly;
+}
+#langs > li{
+    cursor: pointer;
+}
+#langs > li:hover{
+    color: var(--Orange);
+}
+#checkedlang{
+    font-size: 1.6em;
+    color: var(--Dark-Orange);
+    font-weight: bold;
+}
+.container{
+    border-radius: 2em;
+    background-color: var(--Green);
+    width: 80%;
+    margin-left: 10%;
+    box-shadow: .07em .1em #000000AA;
+    margin-bottom: 1.5%;
+    margin-top: 1.5%;
+}
+#blobimg{
+    max-width: 30em;
+    animation: bounce 15s infinite;
+}
+
+/* Tableu */
+#formt{
+    margin-left: 250px;
+    margin-top: 100px;
+    text-align: left;
+    
+}
+
+
+.textarea{
+    top: 0%;
+    left: 0%;
+    padding: 0%;
+    
+}
+
+/* footer */
+footer{
+    background: var(--Green);
+    height: auto;
+    width: 98vw;
+    font-family: "Open Sans";
+    padding-top: 0em;
+    color: var(--black);
+    margin-top: 2rem;
+    border-radius: 0 0 30px 30px;
+    
+}
+.foot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.foot h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.foot p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+.socials{
+    list-style: none;
+}
+.socials li{
+    font-size: medium;
+}
+.foot-bottom{
+    background-color: var(--black);
+    width: 98vw;
+    padding: 5px 0;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+}
+.foot-bottom{
+    color: var(--Green);
+}
+.foot-h3{
+    font-size: small;
+}
+@media screen and (max-width: 960px) {
+    .td1,.td2,.td3,.td4{
+        
+        text-align: center;
+        width:100%;
+        display: block;
     }
+    #pImage{
+        max-width: 15em;
+    }
+    #blobimg{
+        max-width: 13em;
+    }
+    .mute{
+        opacity: 1;
+    }
+    .tglmenu{
+        width: 100px;
+        
+    }
+    .tglmenu #menus {
+        display: none;
+        background-color: var(--Green);
+        width: 100px;
+        border-radius: 2em;
+    }
+    .icon{
+        font-weight: bolder;
+        font-size: larger;
+        display: block;
+    }
+    #optstd{
+        padding-left: 0em;
+    }
+    
+}
+@media screen and (max-width: 1150px) {
+    #optstd{
+        padding-left: 20em;
+    }
+    
 }
 @media (max-aspect-ration: 16/9) {
     .main_Vid{
@@ -107,3 +364,7 @@ body{
         height: 100%;
     }
 }
+@keyframes bounce {
+    0%,20%,40%,60%,80%,100% {transform: translateY(0);} 
+    10%,30%,50%,70%,90% {transform: translateY(-.75em);} 
+} 
