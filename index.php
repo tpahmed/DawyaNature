@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dawya Natures</title>
     <script src="JS/style.js" defer></script>
-    <script src="JS/bootstrap.js" defer></script>
     <link rel="stylesheet" href="CSS/style.css">
-    <!-- <link rel="stylesheet" href="CSS/bootstrap.min.css"> -->
 </head>
 <body>
     
@@ -118,167 +116,170 @@
                 </table>
             </div>
             <div class="container">
-                <?php
-        include_once ("Toffers.php");
-        $offers=Offres::getAlloffer();
-        
-        
+                <div class="conForm">
+
+                    <?php
+            include_once ("Toffers.php");
+            $offers=Offres::getAlloffer();
             
-        ?>
-            <table id="formt">
-            <form action="Formulaire.php" method="POST">
-                <tr>
-                <th>
-                    Nom :
-                </th>
-                <td><input type="text" name="nom"></td>
-                <th> Prenom :</th>
-                <td><input type="text"name="prenom"></td>
-                </tr>
+            
                 
-                
-        
-                <tr>
-                    <th>Age :</th>
-                    <td><input type="number" name="age" id=""></td>
-                    <th>Telephone :</th>
-                    <td><input type="text" name="tel" id=""></td>
-                </tr> 
-                <tr>
-                    <th>Email :</th>
-                    <td><input type="email" name="email" id=""></td>
-                    <th>Pays :</th>
-                    <td><input type="text" name="pays" id=""></td>
-                </tr>
-                <tr>
-                    <th>Ville :</th>
-                    <td><input type="text" name="ville" id=""></td>
-        
-                </tr>
-                <tr>
-                    <th> type de client </th>
+            ?>
+                <table id="formt">
+                <form action="Formulaire.php" method="POST">
+                    <tr>
+                    <th>
+                        Nom :
+                    </th>
+                    <td><input type="text" name="nom"></td>
+                    <th> Prenom :</th>
+                    <td><input type="text"name="prenom"></td>
+                    </tr>
                     
-                    <th> Seul <input type="radio" name="typec" value='Seul' checked></th>
-                    <th>Famille <input type="radio" name="typec" value='Famille'> </th>
-                    <th> Amis <input type="radio" name="typec" value='Amis'></th>
-                    <th> Groupe Entreprise  <input type="radio" name="typec" value='Groupe Entreprise'> </th>
-                </tr>
-                <tr>
-                    <th>Nombre de personnes :</th>
-                    <td> <input type="number" name='nmbr'></td>
-                </tr>
-                <tr>
-                        <th> <label for="">liste des offeres :</label></th>
-                        <td>                   
-                        <select name="offre" id="">
-                        <option value="check"> ---choisir votre offer--</option> 
-                        <?php
-        
-        while ($offer=$offers->fetch())
-        {   
-            echo "<option value='$offer[1]'>$offer[1]</option>";
-        
-        }
-        
-        $offers->closeCursor();
-        ?>
-        
-        
-                            </select>
-                        </td>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Date de resrvation  de : </th>
-                    <td><input type="date" name="dated"></td>
-                    <th>Au : </th>
-                    <td><input type="date" name="datef"></td>
-                </tr>
-                <tr>
-                    <th>Repas Jbala sur place déjeuner ou diner :  </th>
-                    <td> <th>OUI  <input type="radio" name="repas" value='oui'></th>
-                    <th>Non <input type="radio" name="repas" value='non'> </th></td>
-                </tr>
-                <tr>
-                    <th class="textarea"  >Souhaits particuliers :  </th>
-        
-                </tr>
-                <tr>
-                    <th></th>
-                    <td>
-                        <textarea name="souhait" id="" cols="30" rows="10"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th><input type="submit" value="envoyer" name="btn"></th>
-                </tr>
-                </form>
-            </table>
-        <?php
-        use PHPMailer\PHPMailer\PHPMailer;
-        use PHPMailer\PHPMailer\Exception;
-        
-        
-        
-        require 'phpmailer/src/Exception.php';
-        require 'phpmailer/src/PHPMailer.php';
-        require 'phpmailer/src/SMTP.php';
-        
-        include_once("traitment.php");
-        if (!empty($_POST['btn'] )){
-            $nom=$_POST['nom'];
-            $prenom=$_POST['prenom'];
-            $age=$_POST['age'];
-            $tel=$_POST['tel'];
-            $email=$_POST['email'];
-            $pays=$_POST['pays'];
-            $typec=$_POST['typec'];
-            $nmbr=$_POST['nmbr'];
-            $offre=$_POST['offre'];
-            $dated=$_POST['dated'];
-            $datef=$_POST['datef'];
-            $repas=$_POST['repas'];
-            $souhait=$_POST['souhait'];
-            $ville=$_POST['ville'];
-        
-            $c=Client::Add($nom,$prenom,$age,$pays,$ville,$typec,$nmbr,$dated,$datef,$offre,$repas,$souhait,$tel,$email);
+                    
             
-            $mail = new PHPMailer (true);
-        
-            $mail->isSMTP();
+                    <tr>
+                        <th>Age :</th>
+                        <td><input type="number" name="age" id=""></td>
+                        <th>Telephone :</th>
+                        <td><input type="text" name="tel" id=""></td>
+                    </tr> 
+                    <tr>
+                        <th>Email :</th>
+                        <td><input type="email" name="email" id=""></td>
+                        <th>Pays :</th>
+                        <td><input type="text" name="pays" id=""></td>
+                    </tr>
+                    <tr>
+                        <th>Ville :</th>
+                        <td><input type="text" name="ville" id=""></td>
             
+                    </tr>
+                    <tr>
+                        <th> type de client </th>
+                        
+                        <th> Seul <input type="radio" name="typec" value='Seul' checked></th>
+                        <th>Famille <input type="radio" name="typec" value='Famille'> </th>
+                        <th> Amis <input type="radio" name="typec" value='Amis'></th>
+                        <th> Groupe Entreprise  <input type="radio" name="typec" value='Groupe Entreprise'> </th>
+                    </tr>
+                    <tr>
+                        <th>Nombre de personnes :</th>
+                        <td> <input type="number" name='nmbr'></td>
+                    </tr>
+                    <tr>
+                            <th> <label for="">liste des offeres :</label></th>
+                            <td>                   
+                            <select name="offre" id="clientoffres">
+                            <option value="check"> ---choisir votre offer--</option> 
+                            <?php
             
-            $message='reservation de Mr/Mmr '.$nom.$prenom;
+            while ($offer=$offers->fetch())
+            {   
+                echo "<option value='$offer[1]'>$offer[1]</option>";
             
-            $mymail='omar.chelouani30@gmail.com';
-            $to='chelouani.24@gmail.com';
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            
-            
-            $mail->Username =$mymail;
-            $mail->Password='zedildggtqjenotr';
-            $mail->SMTPSecure='ssl';
-            $mail->Port=465;
-            $mail->setFrom($mymail,'dawya nature') ;
-            $mail->addAddress ($to);
-            $mail->isHTML(true);
-            $mail->Subject='nouveau reservation';
-            $mail->Body=$message;
-            $mail->send();
-            echo"
-            <script>
-            alert('sent succesfully');
-            document.location.href='Formulaire.php'
-            </script>";
             }
             
-        
-        ?>
-        
-        
+            $offers->closeCursor();
+            ?>
+            
+            
+                                </select>
+                            </td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Date de resrvation  de : </th>
+                        <td><input type="date" name="dated"></td>
+                        <th>Au : </th>
+                        <td><input type="date" name="datef"></td>
+                    </tr>
+                    <tr>
+                        <th>Repas Jbala sur place déjeuner ou diner :  </th>
+                        <td> <th>OUI  <input type="radio" name="repas" value='oui'></th>
+                        <th>Non <input type="radio" name="repas" value='non'> </th></td>
+                    </tr>
+                    <tr>
+                        <th class="textarea"  >Souhaits particuliers :  </th>
+            
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <textarea name="souhait" id="clienttarea" cols="30" rows="10"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th><input type="submit" value="envoyer" name="btn"></th>
+                    </tr>
+                    </form>
+                </table>
+            <?php
+            use PHPMailer\PHPMailer\PHPMailer;
+            use PHPMailer\PHPMailer\Exception;
+            
+            
+            
+            require 'phpmailer/src/Exception.php';
+            require 'phpmailer/src/PHPMailer.php';
+            require 'phpmailer/src/SMTP.php';
+            
+            include_once("traitment.php");
+            if (!empty($_POST['btn'] )){
+                $nom=$_POST['nom'];
+                $prenom=$_POST['prenom'];
+                $age=$_POST['age'];
+                $tel=$_POST['tel'];
+                $email=$_POST['email'];
+                $pays=$_POST['pays'];
+                $typec=$_POST['typec'];
+                $nmbr=$_POST['nmbr'];
+                $offre=$_POST['offre'];
+                $dated=$_POST['dated'];
+                $datef=$_POST['datef'];
+                $repas=$_POST['repas'];
+                $souhait=$_POST['souhait'];
+                $ville=$_POST['ville'];
+            
+                $c=Client::Add($nom,$prenom,$age,$pays,$ville,$typec,$nmbr,$dated,$datef,$offre,$repas,$souhait,$tel,$email);
+                
+                $mail = new PHPMailer (true);
+            
+                $mail->isSMTP();
+                
+                
+                $message='reservation de Mr/Mmr '.$nom.$prenom;
+                
+                $mymail='omar.chelouani30@gmail.com';
+                $to='chelouani.24@gmail.com';
+                $mail->Host = 'smtp.gmail.com';
+                $mail->SMTPAuth = true;
+                
+                
+                $mail->Username =$mymail;
+                $mail->Password='zedildggtqjenotr';
+                $mail->SMTPSecure='ssl';
+                $mail->Port=465;
+                $mail->setFrom($mymail,'dawya nature') ;
+                $mail->addAddress ($to);
+                $mail->isHTML(true);
+                $mail->Subject='nouveau reservation';
+                $mail->Body=$message;
+                $mail->send();
+                echo"
+                <script>
+                alert('sent succesfully');
+                document.location.href='Formulaire.php'
+                </script>";
+                }
+                
+            
+            ?>
+            
+            
+                </div>
             </div>
     </main>
     <footer>

@@ -133,7 +133,7 @@ path {
 }
 
 .tglmenu a.icon {
-    /* display: none; */
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -315,6 +315,54 @@ footer{
 }
 .foot-h3{
     font-size: small;
+}
+.conForm{
+    position: relative;
+}
+#formt{
+
+    color: var(--Orange);
+    /* position: absolute; */
+    left: 0;
+}
+#formt > tbody > tr > td > input , #clienttarea ,#clientoffres{
+    display: block;
+    width: 80%;
+    margin-top: 1.3em;
+    margin-left: 10%;
+    border: none;
+    background-color: var(--Light-Green);
+    border-radius: .5em;
+    opacity: 75%;
+    color: var(--Orange);
+    font-size: 24px;
+    padding-left: 2%;
+}
+#formt > tbody > tr > td > input :hover, #clienttarea:hover,#clientoffres:hover{
+    transition-duration: 150ms;
+    outline: var(--Dark-Orange) solid;
+}
+#formt > tbody > tr > td > input ::placeholder, #clienttarea::placeholder,#clientoffres::placeholder{
+    color: var(--Orange);
+}
+#formt > tbody > tr > td > input :focus, #clienttarea:focus,#clientoffres:focus{
+    outline: var(--Dark-Orange) solid;
+}
+#formt > tbody > tr > td > input :focus::placeholder, #clienttarea:focus::placeholder,#clientoffres:focus::placeholder{
+    color: transparent;
+}
+#clientoffres{
+    width: fit-content;
+}
+@media screen and (max-width: 575px) {
+    .client-table{
+        top: 0;
+        scale: 50%;
+    }
+    .fomulaire{
+        padding: 0;
+        
+    }
 }
 @media screen and (max-width: 960px) {
     .td1,.td2,.td3,.td4{
