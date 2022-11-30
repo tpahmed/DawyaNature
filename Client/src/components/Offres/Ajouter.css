@@ -78,3 +78,8 @@
     font-family: "LEMONMILK";
     color: var(--Orange);
 }
+@media screen and (max-width: 575px) {
+    .image-input{
+        margin-left: 10%;
+    }
+}

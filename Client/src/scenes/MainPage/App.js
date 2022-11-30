@@ -17,11 +17,11 @@ function App() {
         <SideBar/>
         <main className='content'>
           <Routes path='/dashboard' element={<App/>}>
-                <Route index path='home' element={<Holder content={<Chart/>} title="Page D'accueil"/>}/>
+                <Route index path='home' element={<Holder content={<center>&#9842;Not Implemented &#9842;</center>} title="Page D'accueil"/>}/>
                 <Route path='edit' element={<><Holder content={<></>} title="Modifier les pages"/><Holder content={<Offres/>} title="Modifier les offres"/></>}/>
                 <Route path='inbox' element={<Holder content={<Inbox/>} title="boîte de réception"/>}/>
                 <Route path='client' element={<Holder content={<Client/>} title="Formulaire Du Client"/>}/>
-                <Route path='charts' element={<>HI from charts</>}/>
+                <Route path='charts' element={<Holder content={<Chart/>} title="Page D'accueil"/>}/>
                 <Route path='*' element={<Navigate to="home"/>}/>
             </Routes>
         </main>

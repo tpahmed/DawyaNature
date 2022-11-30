@@ -1,0 +1,43 @@
+.client-table{
+    color: var(--Orange);
+    scale: 90%;
+}
+.client-table > tr > td > input , #clienttarea ,#clientoffres{
+    display: block;
+    width: 80%;
+    margin-top: 1.3em;
+    margin-left: 10%;
+    border: none;
+    background-color: var(--Light-Green);
+    border-radius: .5em;
+    opacity: 75%;
+    color: var(--Orange);
+    font-size: 24px;
+    padding-left: 2%;
+}
+.client-table > tr > td > input:hover, #clienttarea:hover,#clientoffres:hover{
+    transition-duration: 150ms;
+    outline: var(--Dark-Orange) solid;
+}
+.client-table > tr > td > input::placeholder, #clienttarea::placeholder,#clientoffres::placeholder{
+    color: var(--Orange);
+}
+.client-table > tr > td > input:focus, #clienttarea:focus,#clientoffres:focus{
+    outline: var(--Dark-Orange) solid;
+}
+.client-table > tr > td > input:focus::placeholder, #clienttarea:focus::placeholder,#clientoffres:focus::placeholder{
+    color: transparent;
+}
+#clientoffres{
+    width: fit-content;
+}
+@media screen and (max-width: 575px) {
+    .client-table{
+        top: 0;
+        scale: 50%;
+    }
+    .fomulaire{
+        padding: 0;
+        
+    }
+}
